@@ -39,7 +39,15 @@ struct TabBar: View {
         }
             .tabItem {
                 Image(systemName: "mail.stack")
-                Text("Certifications")
+                Text("Certificate")
+            }
+            
+            NavigationView {
+                CourseList()
+        }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
             }
         }
     }

@@ -88,9 +88,17 @@ struct CoursesView: View {
                 .padding(16)
                 .frame(maxWidth: .infinity)
                 
-                ForEach(courseSections) { item in
-                    CourseRow(item: item)
+                Text("Latest sections")
+                    .fontWeight(.semibold)
+                    .frame(minWidth: .infinity, alignment: .leading)
+                
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 240))]) {
+                    ForEach(courseSections) { item in
+                        CourseRow(item: item)
+                    }
                 }
+                .padding()
+                
             }
         }
         //Ensures that the course info does not animated away behind the rest of the cards
